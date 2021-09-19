@@ -1,0 +1,125 @@
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.2.2/firebase-app.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.2.2/firebase-auth.min.js"></script>
+
+    <script>
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyC1oD6m6fGDgNRM9Ix0gkJfQslsR3NjKQc",
+  authDomain: "hackaton-6824d.firebaseapp.com",
+  projectId: "hackaton-6824d",
+  storageBucket: "hackaton-6824d.appspot.com",
+  messagingSenderId: "541924881287",
+  appId: "1:541924881287:web:1598487f83c9bcb8ff9922",
+  measurementId: "G-R9H61W9KXC"
+};
+firebase.initializeApp(firebaseConfig);
+
+
+
+
+
+
+
+
+
+
+
+        var provider = new firebase.auth.GoogleAuthProvider();
+
+
+function GoogleLogin(){
+    console.log('login btn call')
+    firebase.auth().signInWithPopup(provider).then(res=>{
+        showUserDetails(res.user);
+        document.getElementById('loginScreen').style.display='none';
+        document.getElementById('dashboard').style.display='block';
+        console.log(res)
+      window.location.href="ballon.html";
+    }).catch(e=>{
+         console.log(e)
+    })
+ 
+}
+     function showUserDetails(user){
+       document.getElementById('userDetails').innerHTML=`<img src"${user.photoURL} style=width:10%> <p>Name: ${user.displayName}</p> <p>Email: ${user.email}</p>`;
+       
+       
+
+}
+
+function LogoutUser(){
+    console.log('logout btn call')
+    firebase.auth().signOut().then(()=>{
+        document.getElementById('loginScreen').style.display='block';
+        document.getElementById('dashboard').style.display='none';
+
+    }).catch((e)=>{
+        console.log(e)
+    })
+}
+    </script>
+    <script>
+            var a=document.getElementById("fame").value;
+     var b=document.getElementById("ename").value;
+     var c =document.getElementById("pwdname").value;
+     function signup(){
+     
+        //    if(fname.length < 0){            //||Email==""||Password==""){
+        //        alert("please fill all requirement");
+        //    }
+        if((document.getElementById('fname').value).length==0||(document.getElementById('ename').value).length==0||(document.getElementById('pwdname').value).length==0){
+            alert("please fill all requirement");
+        }
+        else{
+
+            localStorage.setItem("FullName",a)
+    localStorage.setItem("Email",ename.value)
+     localStorage.setItem("Password",pwdname.value)   
+    console.log(ename.value);
+    console.log(pwdname.value);
+     alert("Your data is save");
+               window.location.href="login page.html";
+           } }
+
+    </script>
+</head>
+<body>
+    <div name="myForm"  action="/action_page.php">
+         <h1 align="center">Signup</h1>
+         <p style="margin-top: 120px;"></p>
+         <label style="margin-left: 350px; " >Full Name*</label><br><br>
+         <input type="text"  name="name"  style="margin-left: 350px; background: transparent; border: none; border-bottom: 1px solid gainsboro ; padding: 2px 100px;"  id="fname" ><br>
+       
+         <br> <label style="margin-left: 350px;" for="ename">Email*</label><br><br>
+         <input type="email"  name="email"  style="margin-left: 350px; background: transparent; border: none; border-bottom: 1px solid gainsboro ; padding: 2px 100px;"  id="ename" ><br>
+          
+       
+         <br> <label style="margin-left: 350px;" for="password">Password*</label><br><br>
+       <input type="password"  name="password"  style="margin-left: 350px; background: transparent; border: none; border-bottom: 1px solid gainsboro ; padding: 2px 100px;"  id="pwdname" ><br>
+        
+<br><br><br>
+         <button type="reset" onclick="signup()"  style="color: white; font-size: large; margin-left: 450px; background-color: blue; outline: none; border: white; height: 50px; width: 120px; " style="color: white;">Signup</button>
+       <br> 
+       <h5 align="center">OR</h5>
+       <div id="loginScreen">
+    <button onclick="GoogleLogin()"  style="color: white; font-size: large; margin-left: 450px; background-color: blue; outline: none; border: white; height: 50px; width: 120px; " style="color: white;" >Continue with Google</button>   
+    </div>
+    <div id="dashboard">
+        <div id="userDetails"></div>
+        <button id="logOut">LogOut</button>
+    </div>
+    </form>
+      
+    </body>
+    </html>
+    

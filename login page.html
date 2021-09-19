@@ -1,0 +1,43 @@
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // var email=document.getElementById("emailname").value;
+        // var password=document.getElementById("pwdname").value;
+        var Email=     localStorage.getItem("Email");
+        var Password=   localStorage.getItem("Password");
+        function login(){
+
+            if(document.getElementById('emailname').value == Email && document.getElementById('pwdname').value == Password){
+            alert("successfully");
+            window.location.href="ballon.html";
+        }else {
+        alert("Invalid Id or password");
+        }
+
+    }
+        
+        </script>
+</head>
+<body>
+    <form action="/action_page.php">
+
+        <h1 align="center">Login</h1>
+         <p style="margin-top: 150px;"></p>
+         <label style="margin-left: 350px; " for="email">Email*</label><br><br>
+         <input type="text"  name="email"  style="margin-left: 350px; background: transparent; border: none; border-bottom: 1px solid gainsboro ; padding: 2px 100px;"  id="emailname" ><br>
+        <br> <label style="margin-left: 350px;" for="password">Password*</label><br><br>
+       <input type="password"  name="password"  style="margin-left: 350px; background: transparent; border: none; border-bottom: 1px solid gainsboro ; padding: 2px 100px;"  id="pwdname" ><br>
+        
+<br><br>
+         <button type="reset" onclick="login()" style="color: white; font-size: large; margin-left: 450px; background-color: blue; outline: none; border: white; height: 50px; width: 120px;">Login</button>
+       <br> 
+       </form>
+      
+    </body>
+    </html>

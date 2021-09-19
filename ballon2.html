@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let popped = 0;
+
+
+document.addEventListener('mouseover', function(e){
+    
+    if (e.target.className === "balloon"){
+        
+                e.target.style.backgroundColor = "white";
+                e.target.style.color= "red";
+                e.target.textContent = "POP!";
+                e.target.style.fontSize = "50px";
+                popped++;
+                removeEvent(e);
+                checkAllPopped();
+    }   
+});
+
+function removeEvent(e){
+    e.target.removeEventListener('mouseover', function(){
+        
+    })
+};
+
+function checkAllPopped(){
+    if (popped === 36){
+alert("Game is completed restart  the game")
+window.location.href="ballon.html";
+        let gallery = document.querySelector('.balloon-gallery');
+        let message = document.querySelector('#yay-no-balloons');
+        gallery.innerHTML = '';
+        message.style.display = 'block';
+    }
+};
+
+setTimeout(function() { alert("Press red Color"); }, 4000);
+setTimeout(function() { alert("Press blue Color"); }, 8000);
+setTimeout(function() { alert("Press Yellowgreen Color"); }, 12000);
+setTimeout(function() { alert("Press green Color"); },16000 );
+setTimeout(function() { alert("Press yellow Color"); }, 20000);
+setTimeout(function() { alert("Press mediumaquamarine Color"); },24000 );
+setTimeout(function() { alert("Press orange Color"); }, 28000); 
+setTimeout(function() { alert("Press maroon Color"); }, 32000 );
+setTimeout(function() { alert("Press magenta Color"); }, 36000 );
+
+    </script>
+</head>
+<body>
+    <h1>Welcome to Second level</h1>
+    <div>
+        <!-- <h1>User life : <span id="life">10</span></h1> -->
+        <!-- <h1>User score : <span id="score"></span></h1> -->
+        <h3>In this level 2 you followed the user and pop all the bollons </h3>
+    <br><br>
+    <div class="mainballoon">
+    <div  class="balloon"style="background-color: red;width:60px ;height:60px;border-radius: 50px;"></div>
+    <div class="balloon"style="background-color:blue;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 150px;"></div>
+    <div class="balloon" style="background-color :yellowgreen;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 300px;"></div>
+    <div class="balloon" style="background-color:green;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 440px;"></div>
+    <div class="balloon"style="background-color: yellow;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 600px;"></div>
+    <div class="balloon"style="background-color:mediumaquamarine;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 750px;"></div>
+    <div class="balloon"style="background-color:orange;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 900px;"></div>
+    <div class="balloon"style="background-color:maroon;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 1050px;"></div>
+    <div class="balloon"style="background-color:magenta;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 1200px;"></div>
+    </div><br><br><br>
+    <div class="mainballoon">
+        <div  class="balloon"style="background-color: red;width:60px ;height:60px;border-radius: 50px;"></div>
+        <div class="balloon"style="background-color:blue;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 150px;"></div>
+        <div class="balloon" style="background-color :yellowgreen;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 300px;"></div>
+        <div class="balloon" style="background-color:green;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 440px;"></div>
+        <div class="balloon"style="background-color: yellow;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 600px;"></div>
+        <div class="balloon"style="background-color:mediumaquamarine;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 750px;"></div>
+        <div class="balloon"style="background-color:orange;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 900px;"></div>
+        <div class="balloon"style="background-color:maroon;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 1050px;"></div>
+        <div class="balloon"style="background-color:magenta;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 1200px;"></div>
+        </div><br><br><br>
+        <div class="mainballoon">
+            <div  class="balloon"style="background-color: red;width:60px ;height:60px;border-radius: 50px;"></div>
+            <div class="balloon"style="background-color:blue;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 150px;"></div>
+            <div class="balloon" style="background-color :yellowgreen;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 300px;"></div>
+            <div class="balloon" style="background-color:green;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 440px;"></div>
+            <div class="balloon"style="background-color: yellow;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 600px;"></div>
+            <div class="balloon"style="background-color:mediumaquamarine;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 750px;"></div>
+            <div class="balloon"style="background-color:orange;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 900px;"></div>
+            <div class="balloon"style="background-color:maroon;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 1050px;"></div>
+            <div class="balloon"style="background-color:magenta;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 1200px;"></div>
+            </div><br><br><br>
+            <div class="mainballoon">
+                <div  class="balloon"style="background-color: red;width:60px ;height:60px;border-radius: 50px;"></div>
+                <div class="balloon"style="background-color:blue;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 150px;"></div>
+                <div class="balloon" style="background-color :yellowgreen;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 300px;"></div>
+                <div class="balloon" style="background-color:green;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 440px;"></div>
+                <div class="balloon"style="background-color: yellow;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 600px;"></div>
+                <div class="balloon"style="background-color:mediumaquamarine;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 750px;"></div>
+                <div class="balloon"style="background-color:orange;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 900px;"></div>
+                <div class="balloon"style="background-color:maroon;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 1050px;"></div>
+                <div class="balloon"style="background-color:magenta;width:60px ;height:60px;border-radius: 50px;margin-top: -60px;margin-left: 1200px;"></div>
+                </div><br><br><br>
+         </body>
+    </html>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
